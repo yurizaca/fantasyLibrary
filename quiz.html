@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Logo" />
+      </div>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produto.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li class="theme-toggle">
+          <button id="dark-theme">Modo Escuro</button>
+          <button id="light-theme">Modo Claro</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="quiz">
+      <h1>Resumo do Quiz</h1>
+      <h4>Qual país é o maior produtor de vinho do mundo?</h4>
+      <div class="resposta1"></div>
+
+      <h4>Qual é o principal ingrediente do vinho?</h4>
+      <div class="resposta2"></div>
+
+      <h4>Qual é a cor do vinho produzido a partir de uvas brancas?</h4>
+      <div class="resposta3"></div>
+    </div>
+    <div class="especial">
+      <span id="corretas"></span>
+      <span id="emojis"></span>
+    </div>
+
+    <footer>
+      <p id="data"></p>
+      <p>Telefone: (11) 4002-8922</p>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com">
+            <img src="images/linkedin.jpg" alt="LinkedIn Logo" />
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com">
+            <img src="images/insta.jpg" alt="Instagram Logo" />
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com">
+            <img src="images/face.jpg" alt="Facebook Logo" />
+            Facebook
+          </a>
+        </li>
+      </ul>
+    </footer>
+    <script>
+      let correctAnswers = 0;
+      alert("Vamos conhecer sobre vinho!");
+
+      let resposta1 = prompt(
+        " Quem é o autor da série de livros Harry Potter?\n1)  J.K. Rowling\n2) George R.R. Martin\n3) Suzanne Collins"
+      );
+      if (resposta1 == "1") {
+        alert("Resposta correta!");
+        correctAnswers += 1;
+        document.querySelector(".resposta1").innerHTML =
+          "Resposta: " + resposta1 + " &nbsp ✅";
+      } else {
+        alert("Resposta incorreta. A resposta correta é 1 J.K. Rowling.");
+        document.querySelector(".resposta1").innerHTML =
+          "Resposta: " + resposta1 + " &nbsp ❌";
+      }
+
+      let resposta2 = prompt(
+        "Em O Senhor dos Anéis, qual é o nome da criatura obcecada pelo Anel do Poder??\n1) Gandalf\n2) Frodo\n3) Gollum"
+      );
+      if (resposta2 == "3") {
+        alert("Resposta correta!");
+        correctAnswers += 1;
+        document.querySelector(".resposta2").innerHTML =
+          "Resposta: " + resposta2 + " &nbsp ✅";
+      } else {
+        alert("Resposta incorreta. A resposta correta é 3 Gollum.");
+        document.querySelector(".resposta2").innerHTML =
+          "Resposta: " + resposta2 + " &nbsp ❌";
+      }
+
+      let resposta3 = prompt(
+        "Qual dos seguintes é um personagem da série As Crônicas de Nárnia, de C.S. Lewis?\n1) Eddard Stark\n2) Hermione Granger\n3) Aslan"
+      );
+      if (resposta3 == "3") {
+        alert("Resposta correta!");
+        correctAnswers += 1;
+        document.querySelector(".resposta3").innerHTML =
+          "Resposta: " + resposta3 + " &nbsp ✅";
+      } else {
+        alert("Resposta incorreta. A resposta correta é 3 Aslan.");
+        document.querySelector(".resposta3").innerHTML =
+          "Resposta: " + resposta3 + " &nbsp ❌";
+      }
+      document.getElementById("corretas").innerText = `${correctAnswers}/3`;
+      if (correctAnswers == 0) {
+        document.getElementById("emojis").innerHTML = "☠️";
+      } else if (correctAnswers == 1) {
+        document.getElementById("emojis").innerHTML = "😰";
+      } else if (correctAnswers == 2) {
+        document.getElementById("emojis").innerHTML = "😊";
+      } else {
+        document.getElementById("emojis").innerHTML = "😎😎";
+      }
+    </script>
+  </body>
+</html>
